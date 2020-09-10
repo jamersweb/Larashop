@@ -32,7 +32,7 @@ Route::get('/add-new','UsersController@addNew');
 Route::post('/add-new', 'UsersController@store');
 //Route::post('/add-new/create', 'UsersController@create');
 Route::get('/profile','UsersController@userProfile');
-Route::get('/test','UsersController@userProfile');
+Route::get('/tests','UsersController@userProfile');
 
 
 
