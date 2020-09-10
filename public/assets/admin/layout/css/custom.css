@@ -1,0 +1,26 @@
+.custom-select {
+    font-size: 1.4rem !important;
+}
+
+.user-heading {
+    font-size: 3rem !important;
+}
+
+.submenu {
+    padding: 0 !important;
+}
+
+.submenu li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.form-inline {
+    display: inline-flex;
+}
+
+.page-header-inner {
+    width: 100vw !important;
+}
