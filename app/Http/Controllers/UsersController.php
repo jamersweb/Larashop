@@ -47,7 +47,7 @@ class UsersController extends Controller
     public function store()
     {
 
-        /*request()->validate([
+        request()->validate([
             'uname'=> 'required',
             'useremail'=> 'required',
             'fname'=>'required',
@@ -55,7 +55,7 @@ class UsersController extends Controller
             'pasword' => 'required',
             'userroll' => 'required'
 
-        ]);*/
+        ]);
 
         $user = new userprofiles();
 
