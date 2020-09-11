@@ -18,6 +18,7 @@
 <script>
 
         </script>
+    <script src="https://kit.fontawesome.com/d01e5a8307.js" crossorigin="anonymous"></script>
     <script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="./assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
     <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
