@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12 pb-3">
                 <span class="text-muted text-uppercase user-heading">Pages</span>
-                <a href="your-profile.php"><button type="button" class="btn btn-outline-primary rounded">Add
+                <a href="{{url('/add-page')}}"><button type="button" class="btn btn-outline-primary rounded">Add
                         New</button></a>
             </div>
         </div>
@@ -121,10 +121,11 @@
                         </th>
                         <td class="page_spec"><a  class="page_title my-4">{{$pages->title}}</a>
                             <div class="page_edit">
-                                <a href="#">Edit</a>
+{{--                                {{url('edit-page')}}--}}
+{{--                                {{url('/edit-page/').'/'. $pages->id}}--}}
+                                <a href="{{url('edit-page',$pages->id)}}">Edit</a>
                                 <a href="#">Quick Edit</a>
-                                <a href="#">Trash</a>
-                                <a href="#">Quick Edit</a>
+                                <a href="page_trash/{{$pages->id}}">Trash</a>
                                 <a href="#">Duplicate Page</a>
                             </div>
                         </td>
@@ -133,7 +134,7 @@
                         <td>__</td>
                         <td class="publish-date">
                             <p>Publish</p>
-                            <p>2018/5/26</p>
+                            <p>{{$pages->page_publishedAt}}</p>
                         </td>
                         <td>No value</td>
                         <td>No value</td>

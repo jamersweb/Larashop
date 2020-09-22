@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\lara_page;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRequest;
 
 class PagesController extends Controller
 {
@@ -13,7 +14,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $pgs= lara_page::latest();
+        $pgs= lara_page::all();
         return view('frontend/page/all-pages',compact('pgs'));
 
     }
@@ -21,10 +22,10 @@ class PagesController extends Controller
     {
         return view('frontend/page/add-new-page');
     }
-    public function editpage()
-    {
-        return view('frontend/page/edit-page');
-    }
+//    public function editpage()
+////    {
+////        return view('frontend/page/edit-page');
+////    }
 
     /**
      * Show the form for creating a new resource.
@@ -44,7 +45,10 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+//      dd($request->input('editor1'));
+        lara_page::create($request->all());
+        return redirect('/add-page');
     }
 
     /**
@@ -64,9 +68,11 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(lara_page $id)
     {
-        //
+        return view('frontend/page/edit-page',compact('id'));
+
+//    return 'edit page';
     }
 
     /**
@@ -76,9 +82,11 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,lara_page $id)
     {
-        //
+        $page = lara_page::find($id);
+        $id->update($request->all());
+        return redirect('/all-page');
     }
 
     /**
@@ -87,8 +95,20 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy( $id)
     {
-        //
+//        $page = lara_page::find($id);
+////        $page->destroy();
+//        $task = lara_page::find($id);
+
+//        $category = lara_page::find($pages);
+//        $category->destroy();
+        $data=Lara_page::find($id);
+        $data->delete();
+        return redirect('/all-page');
+
+//        Session::flash('flash_message', 'Task successfully deleted!');
+
+//        return redirect()->route('tasks.index');
     }
 }

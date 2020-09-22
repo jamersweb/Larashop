@@ -1,6 +1,14 @@
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper add-page">
     <div class="page-content">
+        @if(session()->has('success'))
+            <div class="alert success">
+                {{session()->get('success')}}
+            </div>
+        @endif
+        <form action="{{ url('all-page-store') }}" method="POST">
+            @csrf
+
         <div class="row py-2">
             <div class="col-sm-12">
             <h2>Add Page</h2>
@@ -11,7 +19,17 @@
                 <div class="row py-1">
                     <div class="col-sm-12">
                         <div class="input-group titlewrap">
-                            <input type="text" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
+                            <input type="text" name="author_id" value="{{old('author_id')}}" class="form-control rounded" placeholder="AUTHOR ID" aria-label="Title" aria-describedby="basic-addon2">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="input-group titlewrap">
+                            <input type="text" name="title" value="{{old('title')}}" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="input-group titlewrap">
+                            <input type="text" name="slug" value="{{old('slug')}}" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -21,7 +39,7 @@
                     <div class="form-body">
                         <div class="form-group last">
                             <div class="col-md-12">
-                                <textarea class="ckeditor form-control" name="editor1" rows="6"></textarea>
+                                <textarea class="ckeditor form-control" name="description" value="{{old('description')}} rows="6"></textarea>
                             </div>
                         </div>
                     </div>
@@ -41,7 +59,7 @@
 								</a>
 							</div>
                         </div>
-						<div class="portlet-body">   
+						<div class="portlet-body">
                             <p>Add Custom Fields </p>
                             <table>
                                 <thead>
@@ -86,7 +104,7 @@
                             </table>
                         </div>
                         <div class="major-publishing-actions">
-                            <p>Custom fields can be used to add extra metadata to a post that you can 
+                            <p>Custom fields can be used to add extra metadata to a post that you can
                                 <a href="#"> use in your theme</a>
                             </p>
                         </div>
@@ -109,14 +127,14 @@
 								</a>
 							</div>
                         </div>
-						<div class="portlet-body">   
+						<div class="portlet-body">
                             <div class="row py-1">
                                 <div class="col-sm-4">
                                     <p><i class="fas fa-key"></i> Title</p>
                                 </div>
                                 <div class="col-sm-8">
                                 <div class="input-group">
-                                <input type="text" class="form-control rounded" placeholder="About us" aria-label="About us" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control rounded" name="meta_title" value="{{old('meta_title')}}" placeholder="About us" aria-label="About us" aria-describedby="basic-addon1">
                                 </div>
                                 <div class="input-group seo-limit py-1">
                                 <input type="text" class="form-control rounded" aria-label="" aria-describedby="basic-addon1">
@@ -253,9 +271,10 @@
 							</div>
                         </div>
 						<div class="portlet-body">
+                            <input type="hidden" name="publishedAt" value="{{old('publishedAt')}}">
 								<span>
                                     <a href="">
-                                        <button type="button" class="save-action btn btn-outline-primary rounded">Save Draft</button>
+                                        <button type="submit" class="save-action btn btn-outline-primary rounded">Save Draft</button>
                                     </a>
                                 </span>
 								<span>
@@ -270,18 +289,25 @@
                                 </div>
                                 <div class="py-1">
                                     <i class="far fa-eye"></i> Visibility:
-                                    <span>Public</san>
+                                    <span>Public</span>
                                     <a href="#">Edit</a>
                                 </div>
                                 <div class="py-1">
                                     <i class="fas fa-calendar-minus"></i> Publish Immediately
                                     <a href="#">Edit</a>
                                 </div>
+                                <div>
+                                    <select class="custom-select rounded " name="status" value="{{old('status')}}">
+                                        <option selected>no status</option>
+                                        <option value="1">enabled</option>
+                                        <option value="2">disalbed</option>
+                                    </select>
+                                </div>
                                 <a href="">
-                                    <button type="button" class="publish btn btn-primary rounded">Publish</button>
+                                    <button type="submit" class="publish btn btn-primary rounded">Publish</button>
                                 </a>
                         </div>
-                        
+
 					</div>
 					<!-- END SAMPLE TABLE PORTLET-->
                 </div>
@@ -302,7 +328,7 @@
 						<div class="portlet-body">
                                 <div class="py-1">
                                     Parent <br>
-                                    <select class="custom-select rounded">
+                                    <select class="custom-select rounded" name="category_id" value="{{old('category_id')}}">
                                     <option selected>no parent</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -328,8 +354,8 @@
                                 <p class="post-attributes-help-text">
                                 Need help? Use the Help tab above the screen title.
                                 </p>
-                                
-                                
+
+
                         </div>
 					</div>
 					<!-- END SAMPLE TABLE PORTLET-->
@@ -348,18 +374,28 @@
 								</a>
 							</div>
                         </div>
-						<div class="portlet-body">   
+						<div class="portlet-body">
                             <div class="">
                                 <a href="#">Set featured image</a>
-                            </div> 
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Upload</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" name="img" value="{{old('img')}}" class="custom-file-input" id="inputGroupFile01">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                            </div>
                         </div>
 					</div>
 					<!-- END SAMPLE TABLE PORTLET-->
                 </div>
             </div>
-					
+
             </div>
         </div>
+            </form>
     </div>
 </div>
 <!-- END CONTAINER -->
