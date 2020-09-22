@@ -324,12 +324,12 @@
                                 <i class="icon-tag"></i> Order View</a>
                         </li>
                         <li>
-                            <a href="{{url('product-list')}}">
+                            <a href="{{Route('product.index')}}">
                                 <i class="icon-handbag"></i> Products
                             </a>
                         </li>
                         <li>
-                            <a href="{{url('product-edit')}}">
+                            <a href="{{Route('product.create')}}">
                                 <i class="icon-pencil"></i>Add New Product</a>
                         </li>
                         <li>

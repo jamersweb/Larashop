@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class LaraPostTag extends Migration
+class CreatePostCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class LaraPostTag extends Migration
      */
     public function up()
     {
-        Schema::create('lara_post_tag', function (Blueprint $table) {
+        Schema::create('post_categories', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class LaraPostTag extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lara_post_tag');
+        Schema::dropIfExists('post_categories');
     }
 }

@@ -2,23 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\cr;
 use Illuminate\Http\Request;
+use App\Product;
+use illuminate\Support\Facades\Hash;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response;
      */
     public function index()
     {
-        return view('frontend/product/product');
+//        dd("index");
+        $product = Product::paginate(10);
+        return view('frontend/product/product', compact('product'));
     }
-    public function productEdit()
+    public function productAdd()
     {
-        return view('frontend/product/product-edit');
+        dd("Productadd");
+        return view('frontend/product/product-add');
     }
 
     /**
@@ -28,7 +32,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+//        dd("create");
+        return view('frontend/product/product-create');
     }
 
     /**
@@ -39,51 +44,94 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        if(isset($_GET)){
+//            switch ($_GET['search']){
+//                case "st
+$request->validate([
+                        'name'=>'required',
+                        'category'=>'required',
+                        'sku'=>'required',
+                        'price'=>'required'
+                    ]);
+
+                    product::create($request->all());
+
+                    return view('frontend/product/product');
+//                        ->with('success','Product created successfully.');
+            }
+
+
+
+        /**
+         * Display the specified resource.
+         *
+         * @param  \App\cr  $cr
+         * @return \Illuminate\Http\Response
+         */
+        public function show($id)
+    {
+        dd("show");
+        return view('frontend/product/product-add');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
-    public function show(cr $cr)
+        /**
+         * Show the form for editing the specified resource.
+         *
+         * @param  \App\cr  $cr
+         * @return \Illuminate\Http\Response
+         */
+        public function edit($id)
     {
-        //
+
+        $data= Product::find($id);
+//       dd($data);
+
+
+        return view('frontend/product/product-edit',compact('data'));
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(cr $cr)
+        /**
+         * Update the specified resource in storage.
+         *
+         * @param  \Illuminate\Http\Request  $request
+         * @param  \App\cr  $cr
+         * @return \Illuminate\Http\Response
+         */
+    public function update(Request $request,Product $id)
     {
-        //
+
+//        $request->validate([
+//            'name'=>'required',
+//            'category'=>'required',
+//            'sku'=>'required',
+//            'price'=>'required'
+//        ]);
+////        dd("product");
+//
+//        $data=Product::find('id');
+////            dd('data');
+//        Product::update($request->all());
+////        dd('Product');
+
+            $page = Product::find($id);
+            $id->update($request->all());
+
+
+            return redirect('/product');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, cr $cr)
+        /**
+         * Remove the specified resource from storage.
+         *
+         * @param  \App\cr  $cr
+         * @return \Illuminate\Http\Response
+         */
+        public function destroy($id)
     {
-        //
-    }
+        $data=Product::find($id);
+        $data->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(cr $cr)
-    {
-        //
+        return redirect('/product');
     }
 }

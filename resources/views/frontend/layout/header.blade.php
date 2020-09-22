@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
-Version: 4.1.0
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
@@ -26,26 +15,26 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="" name="author" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-    <link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/uniform/css/uniform.default.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-    <link href="./assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/fullcalendar/fullcalendar.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/jqvmap/jqvmap/jqvmap.css')}}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGIN STYLES -->
     <!-- BEGIN PAGE STYLES -->
-    <link href="./assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/admin/pages/css/tasks.css')}}" rel="stylesheet" type="text/css" />
     <!-- END PAGE STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link href="./assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
-    <link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="./assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/css/components.css')}}" id="style_components" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/admin/layout/css/layout.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/admin/layout/css/themes/darkblue.css')}}" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="{{asset('assets/admin/layout/css/custom.css')}}" rel="stylesheet" type="text/css" />
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
@@ -69,7 +58,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- BEGIN LOGO -->
             <div class="page-logo">
                 <a href="home.php">
-                    <img src="./assets/admin/layout/img/logo.png" alt="logo" class="logo-default" />
+                    <img src="{{asset('assets/admin/layout/img/logo.png')}}" alt="logo" class="logo-default" />
                 </a>
                 <div class="menu-toggler sidebar-toggler hide">
                 </div>
@@ -201,7 +190,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <li>
                                         <a href="inbox.html?a=view">
                                             <span class="photo">
-									<img src="./assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
+									<img src="{{asset('assets/admin/layout3/img/avatar2.jpg')}}" class="img-circle" alt="">
 									</span>
                                             <span class="subject">
 									<span class="from">
@@ -215,7 +204,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <li>
                                         <a href="inbox.html?a=view">
                                             <span class="photo">
-									<img src="./assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
+									<img src="{{asset('assets/admin/layout3/img/avatar3.jpg')}}" class="img-circle" alt="">
 									</span>
                                             <span class="subject">
 									<span class="from">
@@ -229,7 +218,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <li>
                                         <a href="inbox.html?a=view">
                                             <span class="photo">
-									<img src="./assets/admin/layout3/img/avatar1.jpg" class="img-circle" alt="">
+									<img src="{{asset('assets/admin/layout3/img/avatar1.jpg')}}" class="img-circle" alt="">
 									</span>
                                             <span class="subject">
 									<span class="from">
@@ -243,7 +232,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <li>
                                         <a href="inbox.html?a=view">
                                             <span class="photo">
-									<img src="./assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
+									<img src="{{asset('assets/admin/layout3/img/avatar2.jpg')}}" class="img-circle" alt="">
 									</span>
                                             <span class="subject">
 									<span class="from">
@@ -257,7 +246,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <li>
                                         <a href="inbox.html?a=view">
                                             <span class="photo">
-									<img src="./assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
+									<img src="{{asset('assets/admin/layout3/img/avatar3.jpg')}}" class="img-circle" alt="">
 									</span>
                                             <span class="subject">
 									<span class="from">
@@ -374,7 +363,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <img alt="" class="img-circle" src="./assets/admin/layout/img/avatar3_small.jpg" />
+                            <img alt="" class="img-circle" src="{{asset('assets/admin/layout/img/avatar3_small.jpg')}}" />
                             <span class="username username-hide-on-mobile">
 					Nick </span>
                             <i class="fa fa-angle-down"></i>

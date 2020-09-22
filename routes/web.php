@@ -21,8 +21,13 @@ Route::get('/home', 'HomeController@index');
 Route::get('/ecommerce-dashboard', 'HomeController@ecommerce');
 Route::get('/order', 'OrderController@index');
 Route::get('/order-detail', 'OrderController@orders');
-Route::get('/product-list', 'ProductController@index');
-Route::get('/product-edit', 'ProductController@productEdit');
+//Route::get('/product-list', 'ProductController@index');
+//Route::get('/product-add', 'ProductController@productAdd');
+//Route::get('/product-editStore', 'ProductController@store');
+Route::resource('/product', 'ProductController');
+Route::Post('/store','ProductController@store');
+Route::Put('/update','ProductController@update');
+//Route::resource('/create', 'ProductController');
 Route::get('/category-list', 'CategoryController@index');
 Route::get('/category-edit', 'CategoryController@categoryadd');
 Route::get('/subcategory-list', 'CategoryController@subcategory');
@@ -30,6 +35,7 @@ Route::get('/subcategory-edit', 'CategoryController@subcategoryadd');
 Route::get('/all-user','UsersController@index');
 Route::get('/add-new','UsersController@addNew');
 Route::post('/add-new', 'UsersController@store');
+
 //Route::post('/add-new/create', 'UsersController@create');
 Route::get('/profile','UsersController@userProfile');
 Route::get('/tests','UsersController@userProfile');
@@ -45,3 +51,12 @@ Route::get('/edit-post','PostController@editpost');
 
 
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

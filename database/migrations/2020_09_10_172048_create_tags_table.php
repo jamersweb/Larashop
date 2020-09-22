@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class LaraPostMeta extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class LaraPostMeta extends Migration
      */
     public function up()
     {
-        Schema::create('lara_post_meta', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class LaraPostMeta extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lara_post_meta');
+        Schema::dropIfExists('tags');
     }
 }

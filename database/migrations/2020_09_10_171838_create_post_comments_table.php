@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class LaraPost extends Migration
+class CreatePostCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class LaraPost extends Migration
      */
     public function up()
     {
-        Schema::create('lara_post', function (Blueprint $table) {
+        Schema::create('post_comments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class LaraPost extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lara_post');
+        Schema::dropIfExists('post_comments');
     }
 }
