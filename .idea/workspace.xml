@@ -16,7 +16,13 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="418c6c0f-407e-4573-93f9-316bbac0a697" name="Default Changelist" comment="product">
@@ -250,6 +256,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599831683460" />
+    <state x="550" y="263" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1600771947508">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="550" y="263" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/0.0.1366.728@0.0.1366.728" timestamp="1600771947508" />
     <state x="129" y="54" key="MergeDialog" timestamp="1600771229978">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -258,6 +268,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599748923254" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1600772006196">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600772006196" />
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600094344422">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
