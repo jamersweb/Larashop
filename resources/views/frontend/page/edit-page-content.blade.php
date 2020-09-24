@@ -6,7 +6,8 @@
                 {{session()->get('success')}}
             </div>
         @endif
-        <form action="{{ url('update-page',$id->id) }}" method="post">
+{{--            {{ url('update-page',$id->id) }}--}}
+        <form action="" method="post">
             @csrf
             @method('PUT')
 
@@ -20,17 +21,17 @@
                     <div class="row py-1">
                         <div class="col-sm-12">
                             <div class="input-group titlewrap">
-                                <input type="text" name="author_id" value="{{$id->author_id}}" class="form-control rounded" placeholder="AUTHOR ID" aria-label="Title" aria-describedby="basic-addon2">
+                                <input type="text" name="author_id" value="{{$page->author_id}}" class="form-control rounded" placeholder="AUTHOR ID" aria-label="Title" aria-describedby="basic-addon2">
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="input-group titlewrap">
-                                <input type="text" name="title" value="{{$id->title}}" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
+                                <input type="text" name="title" value="{{$page->title}}" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="input-group titlewrap">
-                                <input type="text" name="slug" value="{{$id->slug}}" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
+                                <input type="text" name="slug" value="{{$page->slug}}" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
                             </div>
                         </div>
                     </div>
@@ -41,7 +42,7 @@
                                     <div class="form-group last">
                                         <div class="col-md-12">
                                             <textarea class="ckeditor form-control" name="description" rows="6">
-                                                {{$id->description}}
+                                                {{$page->description}}
                                             </textarea>
                                         </div>
                                     </div>
@@ -137,7 +138,7 @@
                                         </div>
                                         <div class="col-sm-8">
                                             <div class="input-group">
-                                                <input type="text" class="form-control rounded" name="meta_title" value="{{$id->meta_title}}" placeholder="About us" aria-label="About us" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control rounded" name="meta_title" value="{{$page->meta_title}}" placeholder="About us" aria-label="About us" aria-describedby="basic-addon1">
                                             </div>
                                             <div class="input-group seo-limit py-1">
                                                 <input type="text" class="form-control rounded" aria-label="" aria-describedby="basic-addon1">
@@ -274,7 +275,7 @@
                                     </div>
                                 </div>
                                 <div class="portlet-body">
-                                    <input type="hidden" name="publishedAt" value="{{$id->publishedAt}}">
+                                    <input type="hidden" name="publishedAt" value="{{$page->publishedAt}}">
                                     <span>
                                     <a href="">
                                         <button type="submit" class="save-action btn btn-outline-primary rounded">Save Draft</button>
@@ -300,7 +301,7 @@
                                         <a href="#">Edit</a>
                                     </div>
                                     <div>
-                                        <select class="custom-select rounded " name="status" value="{{$id->status}}">
+                                        <select class="custom-select rounded " name="status" value="{{$page->status}}">
                                             <option selected>no status</option>
                                             <option value="1">enabled</option>
                                             <option value="2">disalbed</option>
@@ -331,7 +332,7 @@
                                 <div class="portlet-body">
                                     <div class="py-1">
                                         Parent <br>
-                                        <select class="custom-select rounded" name="category_id" value="{{$id->category_id}}">
+                                        <select class="custom-select rounded" name="category_id" value="{{$page->category_id}}">
                                             <option selected>no parent</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
@@ -386,7 +387,7 @@
                                             <span class="input-group-text">Upload</span>
                                         </div>
                                         <div class="custom-file">
-                                            <input type="file" name="img" value="{{$id->img}}" class="custom-file-input" id="inputGroupFile01">
+                                            <input type="file" name="img" value="{{$page->img}}" class="custom-file-input" id="inputGroupFile01">
                                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                         </div>
                                     </div>

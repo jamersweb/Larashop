@@ -17,10 +17,14 @@ class PagesController extends Controller
         $pgs= lara_page::all();
         return view('frontend/page/all-pages',compact('pgs'));
 
+//        $pgs= lara_page::latest()->paginate(5);
+//        return view('frontend/page/all-pages',compact('pgs'))->with('i',(request()->input('page' , 1)-1)*5);
+
+
     }
     public function addpage()
     {
-        return view('frontend/page/add-new-page');
+       // return view('frontend/page/add-new-page');
     }
 //    public function editpage()
 ////    {
@@ -34,7 +38,7 @@ class PagesController extends Controller
      */
     public function create()
     {
-        //
+        return view('frontend/page/add-new-page');
     }
 
     /**
@@ -48,7 +52,7 @@ class PagesController extends Controller
 
 //      dd($request->input('editor1'));
         lara_page::create($request->all());
-        return redirect('/add-page');
+        return redirect()->route('page.index');
     }
 
     /**
@@ -68,9 +72,12 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(lara_page $id)
+    public function edit($id)
     {
-        return view('frontend/page/edit-page',compact('id'));
+        $page = lara_page::find($id);
+        //dd($page);
+        return view('frontend/page/edit-page',compact('page'));
+//        return view('frontend/page/edit-page',compact('id'));
 
 //    return 'edit page';
     }

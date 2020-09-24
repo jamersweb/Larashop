@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12 pb-3">
                 <span class="text-muted text-uppercase user-heading">Pages</span>
-                <a href="{{url('/add-page')}}"><button type="button" class="btn btn-outline-primary rounded">Add
+                <a href="{{route('page.create')}}"><button type="button" class="btn btn-outline-primary rounded">Add
                         New</button></a>
             </div>
         </div>
@@ -123,7 +123,7 @@
                             <div class="page_edit">
 {{--                                {{url('edit-page')}}--}}
 {{--                                {{url('/edit-page/').'/'. $pages->id}}--}}
-                                <a href="{{url('edit-page',$pages->id)}}">Edit</a>
+                                <a href="{{ route('page.edit',$pages->id)}}">Edit</a>
                                 <a href="#">Quick Edit</a>
                                 <a href="page_trash/{{$pages->id}}">Trash</a>
                                 <a href="#">Duplicate Page</a>

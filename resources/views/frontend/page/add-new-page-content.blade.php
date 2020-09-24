@@ -6,7 +6,7 @@
                 {{session()->get('success')}}
             </div>
         @endif
-        <form action="{{ url('all-page-store') }}" method="POST">
+        <form action="{{ route('page.store') }}" method="POST">
             @csrf
 
         <div class="row py-2">
