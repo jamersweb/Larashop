@@ -1,11 +1,11 @@
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper add-page">
     <div class="page-content">
-        @if(session()->has('success'))
-            <div class="alert success">
-                {{session()->get('success')}}
-            </div>
-        @endif
+{{--        @if(session()->has('success'))--}}
+{{--            <div class="alert success">--}}
+{{--                {{session()->get('success')}}--}}
+{{--            </div>--}}
+{{--        @endif--}}
         <form action="{{ route('page.store') }}" method="POST">
             @csrf
 

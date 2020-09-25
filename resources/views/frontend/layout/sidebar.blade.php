@@ -114,11 +114,11 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="index.html">
+                            <a href="{{route('page.index')}}">
                                 <i class=""></i> all pages</a>
                         </li>
                         <li>
-                            <a href="index_2.html">
+                            <a href="{{route('page.create')}}">
                                 <i class=""></i> add new</a>
                         </li>
                     </ul>

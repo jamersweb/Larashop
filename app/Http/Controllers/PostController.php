@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\lara_post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,15 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('frontend/post/all-post');
-    }
-    public function addpost()
-    {
-        return view('frontend/post/add-post');
-    }
-    public function editpost()
-    {
-        return view('frontend/post/edit-post');
+       $pst = lara_post::all();
+        return view('frontend/post/all-post',compact('pst'));
     }
 
     /**
@@ -31,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('frontend/post/add-post');
     }
 
     /**
@@ -42,16 +36,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        lara_post::create($request->all());
+        return redirect()->route('post.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\lara_post  $lara_post
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(lara_post $lara_post)
     {
         //
     }
@@ -59,34 +54,37 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\lara_post  $lara_post
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($lara_post)
     {
-        //
+        $post = lara_post::find($lara_post);
+        return view('frontend/post/edit-post',compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\lara_post  $lara_post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$lara_post)
     {
-        //
+        lara_post::find($lara_post)->update($request->all());
+        return redirect()->route('post.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\lara_post  $lara_post
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($lara_post)
     {
-        //
+        lara_post::find($lara_post)->delete();
+        return redirect()->route('post.index');
     }
 }

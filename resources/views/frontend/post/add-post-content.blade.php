@@ -5,6 +5,8 @@
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper add-post">
     <div class="page-content">
+        <form action="{{route('post.store')}}" method="POST">
+            @csrf
         <div class="row py-2">
             <div class="col-sm-12">
             <h2>Add Post</h2>
@@ -15,7 +17,14 @@
                 <div class="row py-1">
                     <div class="col-sm-12">
                         <div class="input-group titlewrap">
-                            <input type="text" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
+                            <input type="text" name="author_id" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-1">
+                    <div class="col-sm-12">
+                        <div class="input-group titlewrap">
+                            <input type="text" name="title" class="form-control rounded" placeholder="Title" aria-label="Title" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -25,11 +34,22 @@
                     <div class="form-body">
                         <div class="form-group last">
                             <div class="col-md-12">
-                                <textarea class="ckeditor form-control" name="editor1" rows="6"></textarea>
+                                <textarea class="ckeditor form-control" name="description" rows="6"></textarea>
                             </div>
                         </div>
                     </div>
                 </form>
+                </div>
+                <div class="col-sm-12">
+                    <form action="#" class="form-horizontal form-bordered">
+                        <div class="form-body">
+                            <div class="form-group last">
+                                <div class="col-md-12">
+                                    <textarea class="ckeditor form-control" name="short_description" rows="6"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="row postbox-container py-1">
@@ -120,7 +140,7 @@
                                 </div>
                                 <div class="col-sm-8">
                                 <div class="input-group">
-                                <input type="text" class="form-control rounded" placeholder="About us" aria-label="About us" aria-describedby="basic-addon1">
+                                <input type="text" name="meta_title" class="form-control rounded"  placeholder="About us" aria-label="About us" aria-describedby="basic-addon1">
                                 </div>
                                 <div class="input-group seo-limit py-1">
                                 <input type="text" class="form-control rounded" aria-label="" aria-describedby="basic-addon1">
@@ -269,12 +289,19 @@
                                 </span>
                                 <div class="py-1">
                                     <i class="fas fa-key"></i> Status:
-                                    <span>Draft</san>
+                                    <span>Draft</span>
                                     <a href="#">Edit</a>
+                                        <div>
+                                        <select class="custom-select rounded " name="status" value="">
+                                            <option selected>no status</option>
+                                            <option value="1">enabled</option>
+                                            <option value="2">disalbed</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="py-1">
                                     <i class="far fa-eye"></i> Visibility:
-                                    <span>Public</san>
+                                    <span>Public</span>
                                     <a href="#">Edit</a>
                                 </div>
                                 <div class="py-1">
@@ -282,7 +309,7 @@
                                     <a href="#">Edit</a>
                                 </div>
                                 <a href="">
-                                    <button type="button" class="publish btn btn-primary rounded">Publish</button>
+                                    <button type="submit" class="publish btn btn-primary rounded">Publish</button>
                                 </a>
                         </div>
 
@@ -306,22 +333,22 @@
 						<div class="portlet-body">
                                 <div class="py-1">
                                     Parent <br>
-                                    <select class="custom-select rounded">
+                                    <select name="parent_id" class="custom-select rounded">
                                     <option selected>no parent</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
                                 </div>
-                                <div class="py-1">
-                                    Template <br>
-                                    <select class="custom-select rounded">
-                                    <option selected>Default Template</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                </div>
+{{--                                <div class="py-1">--}}
+{{--                                    Template <br>--}}
+{{--                                    <select class="custom-select rounded">--}}
+{{--                                    <option selected>Default Template</option>--}}
+{{--                                    <option value="1">One</option>--}}
+{{--                                    <option value="2">Two</option>--}}
+{{--                                    <option value="3">Three</option>--}}
+{{--                                </select>--}}
+{{--                                </div>--}}
                                 <div class="py-1">
                                     Order <br>
                                     <div class="input-group ">
@@ -356,6 +383,9 @@
                             <div class="">
                                 <a href="#">Set featured image</a>
                             </div>
+                            <div class="custom-file">
+                                <input type="file" name="img" value="{{old('img')}}" class="custom-file-input" id="inputGroupFile01">
+                            </div>
                         </div>
 					</div>
 					<!-- END SAMPLE TABLE PORTLET-->
@@ -364,6 +394,7 @@
 
             </div>
         </div>
+        </form>
     </div>
 </div>
 <!-- END CONTAINER -->

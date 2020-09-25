@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12 pb-3">
                 <span class="text-muted text-uppercase user-heading">Post</span>
-                <a href="your-profile.php"><button type="button" class="btn btn-outline-primary rounded">Add
+                <a href="{{route('post.create')}}"><button type="button" class="btn btn-outline-primary rounded">Add
                         New</button></a>
             </div>
         </div>
@@ -98,7 +98,7 @@
                     </thead>
                 </table>
                 <table class="table table-striped">
-                    
+
                 <thead>
                     <tr>
                     <th scope="col">
@@ -114,52 +114,36 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($pst as $post)
                     <tr>
                     <th scope="row" class="checkbox-stripe">
                         <input class="rounded" type="checkbox" aria-label="Checkbox for following text input">
                     </th>
-                    <td class="page_spec"><a  class="page_title my-4">home page</a>
+                    <td class="page_spec"><a  class="page_title my-4">{{$post->title}}</a>
                     <div class="page_edit">
-                        <a href="#">Edit</a>
+                        <a href="{{route('post.edit',$post->id)}}">Edit</a>
                         <a href="#">Quick Edit</a>
-                        <a href="#">Trash</a>
+{{--                        <a href="#">Trash</a>--}}
+                        <form method="post" action="{{route('post.destroy',$post->id)}}" >
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
                         <a href="#">Quick Edit</a>
                         <a href="#">Duplicate Page</a>
                     </div>
                     </td>
-                    <td>Admin</td>
+                    <td>{{$post->author_id}}</td>
                     <td><i class="fas fa-signal"></i></td>
                     <td>__</td>
                     <td class="publish-date">
                         <p>Publish</p>
-                        <p>2018/5/26</p>
+                        <p>{{$post->created_at}}</p>
                     </td>
                     <td>No value</td>
                     <td>No value</td>
                     </tr>
-                    <tr>
-                    <th scope="row" class="checkbox-stripe">
-                        <input class="rounded" type="checkbox" aria-label="Checkbox for following text input">
-                    </th>
-                    <td class="page_spec"><a  class="page_title my-4">home page</a>
-                    <div class="page_edit">
-                        <a href="#">Edit</a>
-                        <a href="#">Quick Edit</a>
-                        <a href="#">Trash</a>
-                        <a href="#">Quick Edit</a>
-                        <a href="#">Duplicate Page</a>
-                    </div>
-                    </td>
-                    <td>Admin</td>
-                    <td><i class="fas fa-signal"></i></td>
-                    <td>__</td>
-                    <td class="publish-date">
-                        <p>Publish</p>
-                        <p>2018/5/26</p>
-                    </td>
-                    <td>No value</td>
-                    <td>No value</td>
-                    </tr>     
+                @endforeach
                 </tbody>
                 </table>
             </div>
@@ -193,4 +177,3 @@ table.table.table-striped .publish-date p {
     background-color: #f9f9f9 !important;
 }
     </style>
- 

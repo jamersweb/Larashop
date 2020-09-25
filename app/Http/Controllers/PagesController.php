@@ -97,8 +97,8 @@ class PagesController extends Controller
      */
     public function destroy($id)
     {
-//        lara_page::find($id)->delete();
-//        return redirect()->route('page.index');
-        return '123';
+        lara_page::find($id)->delete();
+        return redirect()->route('page.index');
+//        return '123';
     }
 }
