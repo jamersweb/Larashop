@@ -6,8 +6,8 @@
                 {{session()->get('success')}}
             </div>
         @endif
-{{--            {{ url('update-page',$id->id) }}--}}
-        <form action="" method="post">
+
+        <form action="{{ route('page.update',$page->id) }}" method="post">
             @csrf
             @method('PUT')
 

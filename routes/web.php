@@ -33,15 +33,10 @@ Route::post('/add-new', 'UsersController@store');
 //Route::post('/add-new/create', 'UsersController@create');
 Route::get('/profile','UsersController@userProfile');
 Route::get('/tests','UsersController@userProfile');
-Route::get('/all-page','PagesController@index');
-Route::POST('/all-page-store','PagesController@store');
-Route::Get('/add-page','PagesController@addpage');
-Route::get('/edit-page/{id}','PagesController@edit');
-Route::PUT('/update-page/{id}','PagesController@update');
-Route::get('/page_trash/{id}','PagesController@destroy');
 Route::get('/all-post','PostController@index');
 Route::get('/add-post','PostController@addpost');
 Route::get('/edit-post','PostController@editpost');
-
+//    page-controller
+Route::resource('page','PagesController');
 
 

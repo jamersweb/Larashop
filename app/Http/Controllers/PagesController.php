@@ -24,7 +24,7 @@ class PagesController extends Controller
     }
     public function addpage()
     {
-       // return view('frontend/page/add-new-page');
+        // return view('frontend/page/add-new-page');
     }
 //    public function editpage()
 ////    {
@@ -49,8 +49,6 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-
-//      dd($request->input('editor1'));
         lara_page::create($request->all());
         return redirect()->route('page.index');
     }
@@ -75,11 +73,7 @@ class PagesController extends Controller
     public function edit($id)
     {
         $page = lara_page::find($id);
-        //dd($page);
         return view('frontend/page/edit-page',compact('page'));
-//        return view('frontend/page/edit-page',compact('id'));
-
-//    return 'edit page';
     }
 
     /**
@@ -89,11 +83,10 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,lara_page $id)
+    public function update(Request $request,$id)
     {
-        $page = lara_page::find($id);
-        $id->update($request->all());
-        return redirect('/all-page');
+        lara_page::find($id)->update($request->all());
+        return redirect()->route('page.index');
     }
 
     /**
@@ -102,20 +95,10 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
-//        $page = lara_page::find($id);
-////        $page->destroy();
-//        $task = lara_page::find($id);
-
-//        $category = lara_page::find($pages);
-//        $category->destroy();
-        $data=Lara_page::find($id);
-        $data->delete();
-        return redirect('/all-page');
-
-//        Session::flash('flash_message', 'Task successfully deleted!');
-
-//        return redirect()->route('tasks.index');
+//        lara_page::find($id)->delete();
+//        return redirect()->route('page.index');
+        return '123';
     }
 }

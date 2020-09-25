@@ -12,8 +12,8 @@
             <div class="col-12">
                 <table>
                     <thead>
-                        <tr>
-                            <td>
+                    <tr>
+                        <td>
                             <ul class="submenu subsubsub">
                                 <li class="all"><a href="users.php">All <span class="count text-muted">(0)</span></a> |</li>
                                 <li class="administrator"><a href="users.php?role=administrator">Administrator <span
@@ -27,16 +27,16 @@
                                 <li class="wfls-inactive"><a href="users.php?wf2fa=inactive">2FA Inactive <span
                                             class="count text-muted">(0)</span></a></li>
                             </ul>
-                            </td>
-                            <td class="search-tb-data">
+                        </td>
+                        <td class="search-tb-data">
                             <nav class="navbar navbar-light justify-content-end m-0">
                                 <form class="form-inline">
                                     <input class="form-control rounded" type="search" placeholder="Search" aria-label="Search">
                                     <button class="btn btn-outline-primary rounded" type="submit">Search Users</button>
                                 </form>
                             </nav>
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
                     </thead>
                 </table>
             </div>
@@ -44,9 +44,9 @@
         <div class="row">
             <div class="col-12">
                 <table>
-                <thead class="tablenav top">
-                        <tr>
-                            <th>
+                    <thead class="tablenav top">
+                    <tr>
+                        <th>
                             <form class="form-inline">
                                 <select class="form-control rounded">
                                     <option>Bulk Action</option>
@@ -54,8 +54,8 @@
                                 </select>
                             </form>
                             <button type="button" class="btn btn-outline-primary rounded">Apply</button>
-                            </th>
-                            <th>
+                        </th>
+                        <th>
                             <form class="form-inline rounded">
                                 <select class="form-control rounded">
                                     <option>Change Role to...</option>
@@ -69,8 +69,8 @@
                                 </select>
                             </form>
                             <button type="button" class="btn btn-outline-primary rounded">Change</button>
-                            </th>
-                            <th colspan="6" class="addnewsss">
+                        </th>
+                        <th colspan="6" class="addnewsss">
                             <nav aria-label="Page navigation example" class="data-table-pagination">
                                 <ul class="pagination d-flex justify-content-end m-0">
                                     <li class="page-item">
@@ -90,57 +90,60 @@
                                     </li>
                                 </ul>
                             </nav>
-                            </th>
-                            <!-- <th></th>
-                            <th></th>
-                            <th></th> -->
-                        </tr>
+                        </th>
+                        <!-- <th></th>
+                        <th></th>
+                        <th></th> -->
+                    </tr>
                     </thead>
                 </table>
                 <table class="table table-striped">
 
-                <thead>
+                    <thead>
                     <tr>
-                    <th scope="col">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
-                    </th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Stats</th>
-                    <th scope="col">msg</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">SEO Title</th>
-                    <th scope="col">SEO Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                @foreach($pgs as $pages)
-                    <tr>
-                        <th scope="row" class="checkbox-stripe">
-                            <input class="rounded" type="checkbox" aria-label="Checkbox for following text input">
+                        <th scope="col">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
                         </th>
-                        <td class="page_spec"><a  class="page_title my-4">{{$pages->title}}</a>
-                            <div class="page_edit">
-{{--                                {{url('edit-page')}}--}}
-{{--                                {{url('/edit-page/').'/'. $pages->id}}--}}
-                                <a href="{{ route('page.edit',$pages->id)}}">Edit</a>
-                                <a href="#">Quick Edit</a>
-                                <a href="page_trash/{{$pages->id}}">Trash</a>
-                                <a href="#">Duplicate Page</a>
-                            </div>
-                        </td>
-                        <td>{{$pages->author_id}}</td>
-                        <td><i class="fas fa-signal"></i></td>
-                        <td>__</td>
-                        <td class="publish-date">
-                            <p>Publish</p>
-                            <p>{{$pages->page_publishedAt}}</p>
-                        </td>
-                        <td>No value</td>
-                        <td>No value</td>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Stats</th>
+                        <th scope="col">msg</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">SEO Title</th>
+                        <th scope="col">SEO Description</th>
                     </tr>
-                @endforeach
-                </tbody>
+                    </thead>
+                    <tbody>
+                    @foreach($pgs as $pages)
+                        <tr>
+                            <th scope="row" class="checkbox-stripe">
+                                <input class="rounded" type="checkbox" aria-label="Checkbox for following text input">
+                            </th>
+                            <td class="page_spec"><a  class="page_title my-4">{{$pages->title}}</a>
+                                <div class="page_edit">
+                                    <a href="{{ route('page.edit',$pages->id)}}">Edit</a>
+                                    <a href="#">Quick Edit</a>
+                                    <form method="Post" action="{{route('page.destroy',$pages->id)}}" >
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">Delete</button>
+                                    </form>
+{{--                                    <a href="{{ route('page.destroy',$pages->id)}}">Trash</a>--}}
+                                    <a href="#">Duplicate Page</a>
+                                </div>
+                            </td>
+                            <td>{{$pages->author_id}}</td>
+                            <td><i class="fas fa-signal"></i></td>
+                            <td>__</td>
+                            <td class="publish-date">
+                                <p>Publish</p>
+                                <p>{{$pages->page_publishedAt}}</p>
+                            </td>
+                            <td>No value</td>
+                            <td>No value</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -150,26 +153,26 @@
 
 
 <style>
-        .page_edit {
-    padding: 0;
-    display:none;
-}
+    .page_edit {
+        padding: 0;
+        display:none;
+    }
 
-     tr:hover .page_edit{
-    display:block;
-}
-td.page_spec {
-    width: 500px;
-    /* line-height:0.5; */
-}
-table.table.table-striped .publish-date p {
-    margin: 0;
-}
-.page_edit a {
-    border-right: 1px solid #357ebd;
-    padding-right: 2px;
-}
-.table-striped > tbody > :nth-child(odd) {
-    background-color: #f9f9f9 !important;
-}
-    </style>
+    tr:hover .page_edit{
+        display:block;
+    }
+    td.page_spec {
+        width: 500px;
+        /* line-height:0.5; */
+    }
+    table.table.table-striped .publish-date p {
+        margin: 0;
+    }
+    .page_edit a {
+        border-right: 1px solid #357ebd;
+        padding-right: 2px;
+    }
+    .table-striped > tbody > :nth-child(odd) {
+        background-color: #f9f9f9 !important;
+    }
+</style>
