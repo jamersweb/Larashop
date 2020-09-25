@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/home', 'HomeController@index');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/ecommerce-dashboard', 'HomeController@ecommerce');
 Route::get('/order', 'OrderController@index');
 Route::get('/order-detail', 'OrderController@orders');
@@ -52,11 +53,3 @@ Route::get('/edit-post','PostController@editpost');
 
 
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
