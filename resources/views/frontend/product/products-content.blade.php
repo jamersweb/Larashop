@@ -1,3 +1,6 @@
+
+
+
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -133,6 +136,7 @@
         <!-- BEGIN PAGE HEADER-->
         <h3 class="page-title">
             Products <small>product listing</small>
+            <a href="{{route('product.create')}}" class="btn btn-outline-primary">Add New</a>
         </h3>
         <div class="page-bar">
             <ul class="page-breadcrumb">
@@ -178,12 +182,15 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
-                <div class="note note-danger">
-                    <p>
-                        NOTE: The below datatable is not connected to a real database so the filter and sorting
-                        is just simulated for demo purposes only.
-                    </p>
-                </div>
+                @if ($message = Session::get('success'))
+
+                    <div class="alert alert-success">
+
+                        <p>{{ $message }}</p>
+
+                    </div>
+
+            @endif
                 <!-- Begin: life time stats -->
                 <div class="portlet">
                     <div class="portlet-title">
@@ -239,9 +246,9 @@
                                         <th width="1%">
                                             <input type="checkbox" class="group-checkable">
                                         </th>
-                                        <th width="10%">
-                                            ID
-                                        </th>
+{{--                                        <th width="10%">--}}
+{{--                                            ID--}}
+{{--                                        </th>--}}
                                         <th width="15%">
                                             Product&nbsp;Name
                                         </th>
@@ -260,9 +267,9 @@
                                         <th width="10%">
                                             Status
                                         </th>
-                                        <th width="10%">
-                                            Actions
-                                        </th>
+{{--                                        <th width="10%">--}}
+{{--                                            Actions--}}
+{{--                                        </th>--}}
                                     </tr>
                                     <tr role="row" class="filter">
                                         <td>
@@ -321,25 +328,25 @@
                                             <input type="text" class="form-control form-filter input-sm"
                                                 name="product_quantity_to" placeholder="To" />
                                         </td>
-                                        <td>
-                                            <div class="input-group date date-picker margin-bottom-5"
-                                                data-date-format="dd/mm/yyyy">
-                                                <input type="text" class="form-control form-filter input-sm" readonly
-                                                    name="product_created_from" placeholder="From">
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-sm default" type="button"><i
-                                                            class="fa fa-calendar"></i></button>
-                                                </span>
-                                            </div>
-                                            <div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-                                                <input type="text" class="form-control form-filter input-sm" readonly
-                                                    name="product_created_to " placeholder="To">
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-sm default" type="button"><i
-                                                            class="fa fa-calendar"></i></button>
-                                                </span>
-                                            </div>
-                                        </td>
+{{--                                        <td>--}}
+{{--                                            <div class="input-group date date-picker margin-bottom-5"--}}
+{{--                                                data-date-format="dd/mm/yyyy">--}}
+{{--                                                <input type="text" class="form-control form-filter input-sm" readonly--}}
+{{--                                                    name="product_created_from" placeholder="From">--}}
+{{--                                                <span class="input-group-btn">--}}
+{{--                                                    <button class="btn btn-sm default" type="button"><i--}}
+{{--                                                            class="fa fa-calendar"></i></button>--}}
+{{--                                                </span>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="input-group date date-picker" data-date-format="dd/mm/yyyy">--}}
+{{--                                                <input type="text" class="form-control form-filter input-sm" readonly--}}
+{{--                                                    name="product_created_to " placeholder="To">--}}
+{{--                                                <span class="input-group-btn">--}}
+{{--                                                    <button class="btn btn-sm default" type="button"><i--}}
+{{--                                                            class="fa fa-calendar"></i></button>--}}
+{{--                                                </span>--}}
+{{--                                            </div>--}}
+{{--                                        </td>--}}
                                         <td>
                                             <select name="product_status" class="form-control form-filter input-sm">
                                                 <option value="">Select...</option>
@@ -357,10 +364,41 @@
                                                 Reset</button>
                                         </td>
                                     </tr>
+
+                                @foreach($product as $products)
+
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+{{--                                        <td>{{ $products->id}}</td>--}}
+                                        <td>{{ $products->name}}</td>
+                                        <td>{{ $products->category }}</td>
+                                        <td>{{ $products->price }}</td>
+                                        <td>0000</td>
+                                        <td>0000</td>
+                                        <td>{{ $products->status }}</td>
+                                        <td>
+{{--                                                <a class="btn btn-info" href="">Show</a>--}}
+                                            <form method="GET" action="{{url('product/'.$products->id.'/edit')}}" >
+                                                @csrf
+{{--                                                @method('PUT')--}}
+{{--                                                <input type="hidden" name="product_id" value="$products->id">--}}
+                                                <button type="submit" class="btn btn-primary" >Edit</button>
+                                            </form>
+{{--                                            <form method="Delete" action="{{url('product/'.$products->id)}}" >--}}
+                                                <form method="Post" action="{{route('product.destroy',$products->id)}}" >
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger" >Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
                                 </thead>
                                 <tbody>
                                 </tbody>
                             </table>
+{{--                            {!! $products->links() !!}--}}
                         </div>
                     </div>
                 </div>

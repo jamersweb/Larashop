@@ -177,7 +177,7 @@ table.table.table-striped th {
     width: 10%;
     display: inline;
 }
-fhufhurhfr4hfuhfurhufrhufhrufhruhfurhf
+
 li.form-item.form-group.firstname.mandatory {
     width: 50%;
     display: inline-block;
@@ -191,4 +191,8 @@ li.form-item.form-group.lastname.mandatory {
     border-radius: 5px !important;
     height: calc(1.6em + 0.75rem + 10px) !important;
     font-size: 1rem !important;
+}
+
+.categories{
+    height: 294px !important;
 }

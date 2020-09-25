@@ -47,40 +47,40 @@ class ProductController extends Controller
 //        if(isset($_GET)){
 //            switch ($_GET['search']){
 //                case "st
-        $request->validate([
-            'name'=>'required',
-            'category'=>'required',
-            'sku'=>'required',
-            'price'=>'required'
-        ]);
+$request->validate([
+                        'name'=>'required',
+                        'category'=>'required',
+                        'sku'=>'required',
+                        'price'=>'required'
+                    ]);
 
-        product::create($request->all());
+                    product::create($request->all());
 
-        return view('frontend/product/product');
+                    return view('frontend/product/product');
 //                        ->with('success','Product created successfully.');
-    }
+            }
 
 
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+        /**
+         * Display the specified resource.
+         *
+         * @param  \App\cr  $cr
+         * @return \Illuminate\Http\Response
+         */
+        public function show($id)
     {
         dd("show");
         return view('frontend/product/product-add');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+        /**
+         * Show the form for editing the specified resource.
+         *
+         * @param  \App\cr  $cr
+         * @return \Illuminate\Http\Response
+         */
+        public function edit($id)
     {
 
         $data= Product::find($id);
@@ -91,13 +91,13 @@ class ProductController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
+        /**
+         * Update the specified resource in storage.
+         *
+         * @param  \Illuminate\Http\Request  $request
+         * @param  \App\cr  $cr
+         * @return \Illuminate\Http\Response
+         */
     public function update(Request $request,Product $id)
     {
 
@@ -114,20 +114,20 @@ class ProductController extends Controller
 //        Product::update($request->all());
 ////        dd('Product');
 
-        $page = Product::find($id);
-        $id->update($request->all());
+            $page = Product::find($id);
+            $id->update($request->all());
 
 
-        return redirect('/product');
+            return redirect('/product');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+        /**
+         * Remove the specified resource from storage.
+         *
+         * @param  \App\cr  $cr
+         * @return \Illuminate\Http\Response
+         */
+        public function destroy($id)
     {
         $data=Product::find($id);
         $data->delete();

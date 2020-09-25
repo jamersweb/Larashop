@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateProductTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->string('name'); // edit posts
-            $table->string('slug'); //edit-posts
+        Schema::create('product_tags', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tag_title', 75);
+            $table->string('tag_metaTitle', 100);
+            $table->string('tag_slug', 100);
+            $table->string('tag_content');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('product_tags');
     }
 }
