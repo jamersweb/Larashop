@@ -1,7 +1,7 @@
 
-<!--@include('/frontend/layout/header');-->
-<!--@include('/frontend/layout/sidebar');-->
-<!--@include('/frontend/page/add-new-page-content');-->
-<!--@include('/frontend/layout/footer');-->
+<!--@include('/admin/layout/header');-->
+<!--@include('/admin/layout/sidebar');-->
+<!--@include('/admin/page/add-new-page-content');-->
+<!--@include('/admin/layout/footer');-->
 
 

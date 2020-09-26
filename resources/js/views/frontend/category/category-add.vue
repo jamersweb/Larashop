@@ -1,5 +1,5 @@
 
-<!--@include('/frontend/layout/header');-->
-<!--@include('/frontend/layout/sidebar');-->
-<!--@include('/frontend/category/category-add-content');-->
-<!--@include('/frontend/layout/footer');-->
+<!--@include('/admin/layout/header');-->
+<!--@include('/admin/layout/sidebar');-->
+<!--@include('/admin/category/category-add-content');-->
+<!--@include('/admin/layout/footer');-->

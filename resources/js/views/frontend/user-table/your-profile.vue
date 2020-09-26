@@ -1,5 +1,5 @@
 
-<!--@include('/frontend/layout/header');-->
-<!--@include('/frontend/layout/sidebar');-->
-<!--@include('/frontend/user-table/your-profile-form');-->
-<!--@include('/frontend/layout/footer');-->
+<!--@include('/admin/layout/header');-->
+<!--@include('/admin/layout/sidebar');-->
+<!--@include('/admin/user-table/your-profile-form');-->
+<!--@include('/admin/layout/footer');-->

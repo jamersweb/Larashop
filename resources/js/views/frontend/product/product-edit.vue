@@ -1,6 +1,6 @@
 
 
-<!--@include('/frontend/layout/header');-->
-<!--@include('/frontend/layout/sidebar');-->
-<!--@include('/frontend/product/products-edit-content');-->
-<!--@include('/frontend/layout/footer');-->
+<!--@include('/admin/layout/header');-->
+<!--@include('/admin/layout/sidebar');-->
+<!--@include('/admin/product/products-edit-content');-->
+<!--@include('/admin/layout/footer');-->

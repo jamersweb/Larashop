@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\cr;
+use App\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,11 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('frontend/order/orders');
-    }
-    public function orders()
-    {
-        return view('frontend/order/ecommerce-orders');
+        //
     }
 
     /**
@@ -45,10 +41,10 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\cr  $cr
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(cr $cr)
+    public function show(Order $order)
     {
         //
     }
@@ -56,10 +52,10 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\cr  $cr
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(cr $cr)
+    public function edit(Order $order)
     {
         //
     }
@@ -68,10 +64,10 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\cr  $cr
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cr $cr)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -79,10 +75,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\cr  $cr
+     * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cr $cr)
+    public function destroy(Order $order)
     {
         //
     }

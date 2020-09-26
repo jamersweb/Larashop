@@ -15,15 +15,15 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('frontend/user-table/all-user');
+        return view('admin/user-table/all-user');
     }
     public function addNew()
     {
-        return view('frontend/user-table/new-user');
+        return view('admin/user-table/new-user');
     }
     public function userProfile()
     {
-        return view('frontend/user-table/your-profile');
+        return view('admin/user-table/your-profile');
     }
 
 
@@ -35,7 +35,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //return view ('frontend.user-table.new-user-form');
+        //return view ('admin.user-table.new-user-form');
     }
 
     /**

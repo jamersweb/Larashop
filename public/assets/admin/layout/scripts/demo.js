@@ -88,7 +88,7 @@ var Demo = function() {
             }
 
             if (lastSelectedLayout != layoutOption) {
-                //layout changed, run responsive handler: 
+                //layout changed, run responsive handler:
                 Metronic.runResizeHandlers();
             }
             lastSelectedLayout = layoutOption;
@@ -124,7 +124,7 @@ var Demo = function() {
                 $(".top-menu > .navbar-nav > li.dropdown").removeClass("dropdown-dark");
             }
 
-            //footer 
+            //footer
             if (footerOption === 'fixed') {
                 $("body").addClass("page-footer-fixed");
             } else {
@@ -138,7 +138,7 @@ var Demo = function() {
                 $(".page-sidebar-menu").removeClass("page-sidebar-menu-light");
             }
 
-            //sidebar menu 
+            //sidebar menu
             if (sidebarMenuOption === 'hover') {
                 if (sidebarOption == 'fixed') {
                     $('.sidebar-menu-option', panel).val("accordion");
@@ -154,30 +154,30 @@ var Demo = function() {
             if (Metronic.isRTL()) {
                 if (sidebarPosOption === 'left') {
                     $("body").addClass("page-sidebar-reversed");
-                    $('#frontend-link').tooltip('destroy').tooltip({
+                    $('#admin-link').tooltip('destroy').tooltip({
                         placement: 'right'
                     });
                 } else {
                     $("body").removeClass("page-sidebar-reversed");
-                    $('#frontend-link').tooltip('destroy').tooltip({
+                    $('#admin-link').tooltip('destroy').tooltip({
                         placement: 'left'
                     });
                 }
             } else {
                 if (sidebarPosOption === 'right') {
                     $("body").addClass("page-sidebar-reversed");
-                    $('#frontend-link').tooltip('destroy').tooltip({
+                    $('#admin-link').tooltip('destroy').tooltip({
                         placement: 'left'
                     });
                 } else {
                     $("body").removeClass("page-sidebar-reversed");
-                    $('#frontend-link').tooltip('destroy').tooltip({
+                    $('#admin-link').tooltip('destroy').tooltip({
                         placement: 'right'
                     });
                 }
             }
 
-            Layout.fixContentHeight(); // fix content height            
+            Layout.fixContentHeight(); // fix content height
             Layout.initFixedSidebar(); // reinitialize fixed sidebar
         };
 
@@ -268,8 +268,8 @@ var Demo = function() {
         //main function to initiate the theme
         init: function() {
             // handles style customer tool
-            handleTheme(); 
-            
+            handleTheme();
+
             // handle layout style change
             $('.theme-panel .layout-style-option').change(function() {
                  setThemeStyle($(this).val());
@@ -279,7 +279,7 @@ var Demo = function() {
             if ($.cookie && $.cookie('layout-style-option') === 'rounded') {
                 setThemeStyle($.cookie('layout-style-option'));
                 $('.theme-panel .layout-style-option').val($.cookie('layout-style-option'));
-            }            
+            }
         }
     };
 

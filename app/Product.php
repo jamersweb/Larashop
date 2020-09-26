@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table='products';
+    protected $table = 'products';
     protected $fillable = [
         'name',
         'user_id',
@@ -17,8 +17,4 @@ class Product extends Model
         'price',
         'status'
     ];
-
-    public static function find(string $string)
-    {
-    }
 }
