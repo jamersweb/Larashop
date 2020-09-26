@@ -202,7 +202,7 @@
                                 <!-- <button class="btn default"><i class="fa fa-reply"></i> Reset</button> -->
                                 <button class="btn green" type="submit" name="product_submit"><i class="fa fa-check"></i> Save</button>
                                 <!-- <button class="btn green"><i class="fa fa-check-circle"></i> Save & Continue -->
-{{--                                Edit</button>--}}
+                                {{--                                Edit</button>--}}
                                 <div class="btn-group">
                                     <a class="btn yellow dropdown-toggle" href="javascript:;"
                                        data-toggle="dropdown">
@@ -258,7 +258,7 @@
                                         <div class="form-body">
 
                                             <div class="form-group">
-                                                    <input type="text" name="user_id" placeholder="user id" >
+                                                <input type="text" name="user_id" placeholder="user id" >
                                                 <label class="col-md-2 control-label">Name: <span
                                                         class="required">
                                                                 * </span>
@@ -269,7 +269,7 @@
                                                 </div>
                                                 <div class="col-md-10">
                                                     <input type="hidden" class="form-control" name="user_Id" value="12"
-                                                          >
+                                                    >
                                                 </div>
 
                                             </div>

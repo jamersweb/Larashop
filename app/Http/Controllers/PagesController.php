@@ -99,6 +99,5 @@ class PagesController extends Controller
     {
         lara_page::find($id)->delete();
         return redirect()->route('page.index');
-//        return '123';
     }
 }
