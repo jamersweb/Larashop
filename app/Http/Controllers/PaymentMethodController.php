@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Orders;
+use App\Payment_Method;
 use Illuminate\Http\Request;
 
-class OrdersController extends Controller
+class PaymentMethodController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class OrdersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Orders  $orders
+     * @param  \App\Payment_Method  $payment_Method
      * @return \Illuminate\Http\Response
      */
-    public function show(Orders $orders)
+    public function show(Payment_Method $payment_Method)
     {
         //
     }
@@ -52,10 +52,10 @@ class OrdersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Orders  $orders
+     * @param  \App\Payment_Method  $payment_Method
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orders $orders)
+    public function edit(Payment_Method $payment_Method)
     {
         //
     }
@@ -64,10 +64,10 @@ class OrdersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Orders  $orders
+     * @param  \App\Payment_Method  $payment_Method
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Orders $orders)
+    public function update(Request $request, Payment_Method $payment_Method)
     {
         //
     }
@@ -75,10 +75,10 @@ class OrdersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Orders  $orders
+     * @param  \App\Payment_Method  $payment_Method
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Orders $orders)
+    public function destroy(Payment_Method $payment_Method)
     {
         //
     }
