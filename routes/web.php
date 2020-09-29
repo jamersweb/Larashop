@@ -45,5 +45,8 @@ Route::resource('page','PagesController');
 //    post-controller
 Route::resource('post','PostController');
 
-
-
+Route::get('home','Frontend\ViewController@index');
+Route::get('product','Frontend\ViewController@product');
+Route::get('single-product','Frontend\ViewController@single');
+Route::get('checkout','Frontend\ViewController@checkout');
+Route::get('cart','Frontend\ViewController@cart');
