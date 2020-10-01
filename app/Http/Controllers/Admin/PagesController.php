@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\lara_page;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use App\lara_page;
+//use Illuminate\Http\Request;
 use App\Http\Requests\StoreRequest;
 
 class PagesController extends Controller

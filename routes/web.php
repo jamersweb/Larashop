@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Admin\HomeController@index')->name('home');
 Route::get('/ecommerce-dashboard', 'HomeController@ecommerce');
 Route::get('/order', 'OrderController@index');
 Route::get('/order-detail', 'OrderController@orders');
@@ -41,9 +41,9 @@ Route::post('/add-new', 'UsersController@store');
 Route::get('/profile','UsersController@userProfile');
 Route::get('/tests','UsersController@userProfile');
 //    page-controller
-Route::resource('page','PagesController');
+Route::resource('page','Admin\PagesController');
 //    post-controller
-Route::resource('post','PostController');
+Route::resource('post','Admin\PostController');
 
 
 
