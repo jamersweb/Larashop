@@ -5,30 +5,31 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Product;
 use illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response;
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
 //        dd("index");
         $product = Product::paginate(10);
-        return view('admin/product/product', compact('product'));
+        return view('admin/product/product',compact('product'));
     }
     public function productAdd()
     {
-        dd("Productadd");
+//        dd("Productadd");
         return view('admin/product/product-add');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -40,23 +41,23 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
 //        if(isset($_GET)){
 //            switch ($_GET['search']){
 //                case "st
-$request->validate([
+                $request->validate([
                         'name'=>'required',
                         'category'=>'required',
                         'sku'=>'required',
                         'price'=>'required'
                     ]);
 
-                    product::create($request->all());
+                    Product::create($request->all());
 
-                    return view('admin/product/product');
+                    return redirect()->route('product.index');
 //                        ->with('success','Product created successfully.');
             }
 
@@ -68,26 +69,24 @@ $request->validate([
          * @param  \App\cr  $cr
          * @return \Illuminate\Http\Response
          */
-        public function show($id)
+    public function show($id)
     {
-        dd("show");
+//        dd("show");
         return view('admin/product/product-add');
     }
 
         /**
          * Show the form for editing the specified resource.
          *
-         * @param  \App\cr  $cr
-         * @return \Illuminate\Http\Response
+         * @param  \App\Product  $product
+         * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
          */
-        public function edit($id)
+    public function edit($id)
     {
 
-        $data= Product::find($id);
+        $product= Product::find($id);
 //       dd($data);
-
-
-        return view('admin/product/product-edit',compact('data'));
+        return view('admin/product/product-edit',compact('product'));
 
     }
 
@@ -95,18 +94,18 @@ $request->validate([
          * Update the specified resource in storage.
          *
          * @param  \Illuminate\Http\Request  $request
-         * @param  \App\cr  $cr
-         * @return \Illuminate\Http\Response
+         * @param  \App\Product  $request
+         * @return \Illuminate\Http\RedirectResponse
          */
-    public function update(Request $request,Product $id)
+    public function update(Request $request,$id)
     {
 
-//        $request->validate([
-//            'name'=>'required',
-//            'category'=>'required',
-//            'sku'=>'required',
-//            'price'=>'required'
-//        ]);
+        $request->validate([
+            'name'=>'required',
+            'category'=>'required',
+            'sku'=>'required',
+            'price'=>'required'
+        ]);
 ////        dd("product");
 //
 //        $data=Product::find('id');
@@ -114,11 +113,11 @@ $request->validate([
 //        Product::update($request->all());
 ////        dd('Product');
 
-            $page = Product::find($id);
-            $id->update($request->all());
+            $product = Product::find($id);
+            $product->update($request->all());
 
 
-            return redirect('/product');
+            return redirect()->route('product.index');
     }
 
         /**

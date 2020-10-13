@@ -156,7 +156,7 @@ img {
   margin-right: 5px;
 }
 
-.aa-filter-btn {  
+.aa-filter-btn {
   color: #fff;
   font-size: 15px;
   height: 30px;
@@ -381,7 +381,7 @@ img {
   font-family: "Raleway", sans-serif;
   font-size: 28px;
 }
-#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a:hover {  
+#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a:hover {
   color: #333;
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a > span {
@@ -654,7 +654,7 @@ img {
   padding: 8px 15px;
 }
 #menu .menu-area .navbar-default .navbar-nav .dropdown-menu li a:hover, #menu .menu-area .navbar-default .navbar-nav .dropdown-menu li a:focus {
-  color: #fff; 
+  color: #fff;
 }
 #menu .menu-area .navbar-default .navbar-nav .dropdown-menu .dropdown-header {
   color: #555;
@@ -821,7 +821,7 @@ img {
   text-align: center;
 }
 #aa-slider .aa-slider-area .seq-title span {
-  background-color: #fff;  
+  background-color: #fff;
   display: inline-block;
   padding: 6px 15px;
   text-transform: uppercase;
@@ -857,7 +857,7 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#aa-slider .aa-slider-area .seq .seq-next:hover, #aa-slider .aa-slider-area .seq .seq-next:focus {  
+#aa-slider .aa-slider-area .seq .seq-next:hover, #aa-slider .aa-slider-area .seq .seq-next:focus {
   border: 1px solid #f9f9f9;
   color: #fff;
 }
@@ -980,7 +980,7 @@ img {
 }
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content span {
   background-color: #FFF;
-  padding: 5px 10px;  
+  padding: 5px 10px;
 }
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content h4 {
   color: #fff;
@@ -2439,7 +2439,7 @@ img {
   padding: 20px 15px;
 }
 #checkout .checkout-area .checkout-left .panel-group .panel-default .panel-heading .panel-title a {
-  display: block; 
+  display: block;
 }
 #checkout .checkout-area .checkout-left .panel-group .aa-checkout-coupon .aa-coupon-code {
   border: 1px solid #e5e5e5;
@@ -3271,7 +3271,7 @@ img {
   float: left;
   width: 100% !important;
 }
-#aa-contact .aa-contact-area .aa-contact-address .aa-contact-address-left .comments-form button { 
+#aa-contact .aa-contact-area .aa-contact-address .aa-contact-address-left .comments-form button {
   width: 100px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -4179,8 +4179,459 @@ img {
     padding: 6px;
     width: 90px;
   }
-  #aa-header .aa-header-top .aa-header-top-right .aa-head-top-nav-right li a {   
+  #aa-header .aa-header-top .aa-header-top-right .aa-head-top-nav-right li a {
     padding: 5px 2px;
   }
 }
 
+/* ABC */
+/*/ dashboard2 css /*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+header{
+    position: fixed;
+    background: black;
+/*/ padding: 20px; /*/
+width: 100%;
+    height: 65px;
+}
+.wrapper{
+    display: flex;
+    position: relative;
+}
+.wrapper .sidebar{
+/*/ position: fixed; /*/
+width: 165px;
+    height: 100vh;
+    background: black;
+    padding: 30px 0;
+}
+.wrapper .sidebar h2{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.wrapper .sidebar ul li{
+    padding: 15px;
+    font-size: 13px;
+
+}
+.wrapper .sidebar ul li a{
+    color: #bdb8d7;
+    text-decoration: none;
+    display: block;
+}
+.wrapper .sidebar ul li a .fas{
+    width: 25px;
+}
+.wrapper .sidebar ul li a .far{
+    width: 25px;
+}
+.wrapper .sidebar ul li a .fab{
+    width: 25px;
+}
+.wrapper .sidebar ul li:hover{
+    background: #bdc3c7;
+}
+.wrapper .sidebar ul li a:hover{
+    color: #fff;
+}
+.logo{
+    width: 100px;
+    width: 100px;
+}
+/*/ content side /*/
+.buttons3{
+    margin-top: 32px;
+/*/ margin-left: 32px; /*/
+}
+.btn2{
+    background: black;
+    color: white;
+    margin-left: 5px;
+}
+.btn3{
+    background: black;
+    color: white;
+    margin-left: 5px;
+
+}
+/* .main-content {
+position: fixed;
+} */
+.main-heading h3{
+    margin-top: 90px;
+/*/ margin-left: 23px; /*/
+}
+.main-heading2 h3{
+/*/ margin-left: 23px; /*/
+margin-top: 30px;
+}
+.table{
+    margin-top: 40px;
+/*/ margin-left: 125px; /*/
+}
+.table tr td{
+    font-size: 12px;
+    color: black;
+    font-weight: 500;
+}
+.cards-content{
+    margin-top: 23px;
+    border: 4px solid #ecf0f1;
+    border-radius: 16px;
+}
+.cards-image {
+    display: inline-block;
+    padding-left: 18px;
+    height: 200px;
+    padding-top: 24px;
+}
+.cards-image img{
+    height: 150px;
+    width: 100px;
+}
+.cards-desc {
+    display: grid;
+    font-size: 13px;
+    font-weight: 700;
+    float: right;
+    padding-top: 48px;
+    padding-left: 11px;
+    line-height: 24px;
+    color: black;
+}
+/* .cards-content{
+border: 2px solid black;
+} */
+/* .col-lg-4.col-12.cards {
+border: 2px solid;
+border-radius: 19px;
+} */
+/*/ dashboard2 css end /*/
+
+/*/ dashboard3.css /*/
+
+/*/ content side /*/
+.dash-heading {
+ height: 100%;
+/*/ width: 100%; /*/
+    /* position: relative;
+    top: 80px; */
+margin-top: 80px;
+}
+.dash-heading h3{
+    font-weight: bold;
+
+}
+.order-heading h3{
+    font-weight: bold;
+}
+.comp-heading h3{
+    font-weight: bold;
+}
+/*/ dashboard3 and /*/
+
+/*/ dashboard4 /*/
+
+/*/ content css /*/
+.main-heading {
+    margin-top: 95px;
+}
+
+
+
+.main-heading2 {
+    margin-top: 40px;
+}
+.main-heading2 h3{
+    font-weight: bold;
+}
+.add-btn{
+    margin-top: 40px;
+}
+.add-btn button{
+    width: 190px;
+    height: 35px;
+    padding: 5px;
+    border-color: black;
+    color: black;
+    background: #fff;
+}
+.dropdown-btn{
+    padding-top: 24px;
+
+}
+.dropdown-btn button{
+    width: 143px;
+    height: 28px;
+    background-color: black;
+    color: #fff;
+    border-radius: 7px;
+    padding-top: 4px;
+    font-size: 11px;
+    text-align: left;
+    margin-left: 6px;
+}
+.table tbody tr td{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/*/ dashboard4 and /*/
+
+/*/ dashbard5 /*/
+
+/*/ content css /*/
+
+
+.btn-black1{
+    width: 335px;
+    height: 60px;
+    margin-top: 35px;
+    border-radius: 8px;
+    background: black;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    padding-top: 1px;
+}
+
+.add-btn{
+    margin-top: 40px;
+}
+
+.opt1{
+    width: 68px;
+    height: 30px;
+    border-color: black;
+    background-color: white;
+}
+.opt2{
+    width: 68px;
+    height: 30px;
+    border-color: black;
+    background-color: white;
+}.opt3{
+     width: 68px;
+     height: 30px;
+     border-color: black;
+     background-color: white;
+ }
+.pro-num{
+    text-align: center;
+}
+.pri-kg{
+    text-align: center;
+}
+.shop-cart{
+    font-size: 20px;
+}
+.add-cart{
+    width: 130px;
+    height: 22px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 400;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding-top: 0px;
+}
+/*/ dashboard5 and /*/
+
+/*/ dashboard6 /*/
+.labels{
+    font-weight: bold;
+}
+.form-control{
+    border-color: black;
+    width: 142px;
+    height: 30px;
+}
+
+.btn-clear{
+    background-color: black;
+    color: white;
+    width: 96px;
+    height: 32px;
+    font-size: 15px;
+    padding-top: 4px;
+}
+.btn-search{
+    background-color: black;
+    color: white;
+    width: 96px;
+    height: 32px;
+    font-size: 15px;
+    padding-top: 4px;
+
+}
+.para-row{
+    padding-top: 14px;
+    font-weight: 500;
+    font-size: 14px;
+}
+/*/ dashbord6 and /*/
+
+/*/ dashboard7 /*/
+
+
+.btn-black{
+    background-color: black;
+    color: #fff;
+    margin-top: 36px;
+    font-weight: 500;
+}
+.btn-black2{
+    background-color: black;
+    color: #fff;
+    margin-left: 5px;
+    margin-top: 36px;
+    font-weight: 500;
+    width: 117px;
+}
+.btn-black3{
+    background-color: black;
+    color: #fff;
+    margin-left: 5px;
+    margin-top: 36px;
+    font-weight: 500;
+    width: 140px;
+}
+.btn-black4{
+    background-color: black;
+    color: #fff;
+    margin-left: 5px;
+    margin-top: 36px;
+    font-weight: 500;
+    width: 123px;
+}
+.inputs{
+    font-weight: bold;
+}
+.btn-save{
+    background-color: black;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 12px;
+}
+/*/ dashboard7 and /*/
+
+/*/ dashwoard8 /*/
+
+
+
+
+
+.form-check{
+    margin-top: 27px;
+}
+
+/*/ dashboard8 and /*/
+
+/*/ dashboard9 /*/
+
+.form-check1{
+    margin-top: 12px;
+}
+.form-sec{
+    padding-top: 20px;
+}
+
+.input-field{
+    border-color: black;
+}
+/*/ dashboard9 end /*/
+
+/*/ dashbord10 /*/
+
+.che-box{
+    border-color: black;
+}
+
+.select-sec{
+    padding-top: 14px
+}
+.custom-select{
+    border-color: black;
+    color: black;
+}
+.btn-save1{
+    background-color: black;
+    color: #fff;
+    font-weight: 500;
+}
+/*/ dashboard10 and /*/
+
+/*/ dashboard11 /*/
+
+.main-heading p {
+    padding-top: 20px;
+    color: black;
+    font-weight: 500;
+
+}
+button.btn.btn-save {
+    background: black;
+    color: #fff;
+    font-weight: 500;
+}
+/* @media (max-width:500px){
+p{
+color: salmon !important;
+}
+} */
+
+/*/ dashboard11 and /*/
+
+/*/ loginstyle.css /*/
+
+.logo-top img {
+    margin-top: 50px;
+    height: 185px;
+    width: 161px;
+}
+.form-section{
+/*/ margin-top: 100px; /*/
+padding: 45px;
+    background-color: white;
+    border-radius: 23px;
+    width: 90%;
+
+}
+.btn1{
+    margin-top: 8px;
+    padding: 4px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+.text-bold{
+    font-weight: bold;
+}
+.color-gray{
+    font-size: 12px;
+    color: #95a5a6;
+}
+.remember{
+    color: #95a5a6;
+    font-size: 12px;
+}

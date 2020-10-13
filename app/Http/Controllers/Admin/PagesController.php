@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\lara_page;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRequest;
+use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
 {
@@ -19,9 +20,35 @@ class PagesController extends Controller
 
 //        $pgs= lara_page::latest()->paginate(5);
 //        return view('admin/page/all-pages',compact('pgs'))->with('i',(request()->input('page' , 1)-1)*5);
-
-
     }
+
+    public function ecommerce()
+    {
+        return view('admin/ecommerce-dashboard/ecommerce-dashboard');
+    }
+
+    public function mystore()
+    {
+        return view('admin/store/store-content');
+    }
+    public function histroy()
+    {
+        return view('admin/order-histroy/histroy');
+    }
+    public function customer()
+    {
+        return view('/admin/customer-detail/customer-detail');
+    }
+
+    public function editcustormer()
+    {
+        return view('/admin/edit-customer/edit-customer');
+    }
+    public function notification()
+    {
+        return view('/admin/notification/notification');
+    }
+
     public function addpage()
     {
         // return view('admin/page/add-new-page');

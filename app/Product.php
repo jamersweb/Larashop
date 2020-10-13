@@ -4,12 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static create(array $all)
+ */
 class Product extends Model
 {
     protected $table = 'products';
     protected $fillable = [
-        'name',
         'user_id',
+        'name',
         'description',
         'short_description',
         'category',

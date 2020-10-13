@@ -129,7 +129,7 @@
                             <!-- logo  -->
                             <div class="aa-logo">
                                 <!-- Text based logo -->
-                                <a href="index.html">
+                                <a href="{{asset('/home')}}">
                                     <span class="fa fa-shopping-cart"></span>
                                     <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
                                 </a>
@@ -173,7 +173,7 @@
                                             </span>
                                         </li>
                                     </ul>
-                                    <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
+                                    <a class="aa-cartbox-checkout aa-primary-btn" href="{{asset('/checkout')}}">Checkout</a>
                                 </div>
                             </div>
                             <!-- / cart box -->
@@ -212,7 +212,7 @@
                     <div class="navbar-collapse collapse">
                         <!-- Left nav -->
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{{asset('/home')}}">Home</a></li>
                             <li><a href="#">Men <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Casual</a></li>
