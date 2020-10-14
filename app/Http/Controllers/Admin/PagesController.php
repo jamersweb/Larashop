@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+//use App\Http\Controllers\Controller;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\lara_page;
 //use Illuminate\Http\Request;
 use App\Http\Requests\StoreRequest;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin;
 
 class PagesController extends Controller
 {
@@ -29,12 +30,11 @@ class PagesController extends Controller
     {
         return view('admin/ecommerce-dashboard/ecommerce-dashboard');
     }
-
     public function mystore()
     {
-        return view('admin/store/store-content');
+        return view('admin/store/store');
     }
-    public function histroy()
+    public function history()
     {
         return view('admin/order-histroy/histroy');
     }
@@ -42,7 +42,6 @@ class PagesController extends Controller
     {
         return view('/admin/customer-detail/customer-detail');
     }
-
     public function editcustormer()
     {
         return view('/admin/edit-customer/edit-customer');

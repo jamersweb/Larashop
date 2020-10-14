@@ -2,7 +2,7 @@
     <header>
         <div class="wrapper">
             <div class="sidebar">
-                <img src="./images/logo1.png" class="logo" alt="">
+                <img src="{{asset('/img/logo.png')}}" class="logo" alt="logo">
                 <ul class="">
                     <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
                     <li><a href="#"><i class="fab fa-first-order"></i>Order</a></li>

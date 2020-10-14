@@ -18,10 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/ecommerce-dashboard', 'HomeController@ecommerce');
-Route::get('/order', 'OrderController@index');
-Route::get('/order-detail', 'OrderController@orders');
+Route::get('/home', 'Admin\HomeController@index')->name('home');
+Route::get('/ecommerce', 'Admin\PagesController@ecommerce');
+Route::get('/customer-detail', 'Admin\PagesController@customer');
+Route::get('/edit-customer', 'Admin\PagesController@editcustormer');
+Route::get('/notification', 'Admin\PagesController@notification');
+Route::get('/order-history', 'Admin\PagesController@history');
+Route::get('/store', 'Admin\PagesController@mystore');
+
+
 //Route::get('/product-list', 'ProductController@index');
 //Route::get('/product-add', 'ProductController@productAdd');
 //Route::get('/product-editStore', 'ProductController@store');
